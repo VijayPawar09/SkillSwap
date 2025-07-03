@@ -25,7 +25,7 @@ export default function HomeAuthPage() {
         <div className="w-full max-w-xs bg-white bg-opacity-90 rounded-2xl shadow-lg p-8">
           {isLogin ? (
             <>
-              <h2 className="text-2xl font-bold text-center text-red-500 mb-6">Sign In</h2>
+              <h2 className="text-2xl font-bold text-center text-pink-700 mb-6">Sign In</h2>
               <form className="flex flex-col gap-4">
                 <input
                   type="email"
@@ -95,7 +95,7 @@ export default function HomeAuthPage() {
                 Already have an account?{" "}
                 <button
                   onClick={() => setIsLogin(true)}
-                  className="text-red-500 hover:underline font-medium"
+                  className="text-purple-700 hover:underline font-medium"
                 >
                   Login
                 </button>
