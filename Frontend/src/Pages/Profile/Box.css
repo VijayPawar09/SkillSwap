@@ -1,0 +1,40 @@
+.box {
+  background-color: white;
+  color: #013e38;
+  padding: 10px;
+  margin-bottom: 2rem;
+  border-radius: 5px;
+  box-shadow: 3px 3px 5px #5c9c94;
+  width: 100%;
+}
+
+.desc {
+  margin: 0.6rem;
+  margin-top: 1.5rem;
+  font-size: 1rem;
+}
+
+.details {
+  margin: 0.6rem;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+  font-size: 1rem !important;
+  color: grey;
+}
+
+.boxskill-boxes {
+  margin: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.skill-box {
+  text-align: center;
+  background-color: #809c5c;
+  color: white;
+  margin-right: 1rem;
+  border-radius: 5px;
+  min-width: 4rem;
+  font-size: 12px;
+}
