@@ -4,9 +4,15 @@ import "./Card.css";
 import { Link } from "react-router-dom";
 
 const ProfileCard = ({ profileImageUrl, bio, name, skills, rating, username }) => {
+  const initial = name ? name.charAt(0).toUpperCase() : "U";
+
   return (
     <div className="card-container">
-      <img className="img-container" src={profileImageUrl} alt="user" />
+      {profileImageUrl ? (
+        <img className="img-container" src={profileImageUrl} alt="user" />
+      ) : (
+        <div className="img-container initials">{initial}</div>
+      )}
       <h3>{name}</h3>
       <h6>Rating: {rating} ⭐</h6>
       <p style={{ whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis", width: "150px" }}>{bio}</p>
@@ -19,7 +25,7 @@ const ProfileCard = ({ profileImageUrl, bio, name, skills, rating, username }) =
       <div className="profskills">
         <h6>Skills</h6>
         <div className="profskill-boxes">
-          {skills.map((skill, index) => (
+          {(skills || []).map((skill, index) => (
             <div key={index} className="profskill-box">
               <span className="skill">{skill}</span>
             </div>

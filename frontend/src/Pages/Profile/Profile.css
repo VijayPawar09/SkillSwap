@@ -24,6 +24,19 @@
   border-radius: 50%;
 }
 
+.profile-photo .initials {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-color: #3bb4a1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 64px;
+  font-weight: 700;
+}
+
 .profile-name {
   font-size: 2rem !important;
   margin-top: 10px;

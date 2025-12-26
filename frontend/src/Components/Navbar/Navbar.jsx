@@ -45,13 +45,19 @@ const UserProfileDropdown = () => {
           borderRadius: "50%",
           overflow: "hidden",
           marginRight: "10px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: "#3BB4A1",
+          color: "#ffffff",
+          fontWeight: 700,
         }}
       >
-        <img
-          src={user?.picture} // Replace with your image URL
-          alt="User Avatar"
-          style={{ width: "100%", height: "100%", objectFit: "cover" }}
-        />
+        {user?.picture ? (
+          <img src={user.picture} alt="User Avatar" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+        ) : (
+          <span style={{ fontSize: "14px" }}>{user?.name ? user.name.charAt(0).toUpperCase() : "U"}</span>
+        )}
       </div>
       {children}
       &#x25bc;

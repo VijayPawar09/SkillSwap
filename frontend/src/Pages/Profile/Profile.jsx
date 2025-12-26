@@ -93,7 +93,11 @@ const Profile = () => {
               <div className="left-div">
                 {/* Profile Photo */}
                 <div className="profile-photo">
-                  <img src={profileUser?.picture} alt="Profile" />
+                  {profileUser?.picture ? (
+                    <img src={profileUser.picture} alt="Profile" />
+                  ) : (
+                    <div className="initials">{profileUser?.name ? profileUser.name.charAt(0).toUpperCase() : "U"}</div>
+                  )}
                 </div>
                 {/* Name */}
                 <div className="misc">
@@ -140,7 +144,7 @@ const Profile = () => {
                 </div>
               </div>
               <div className="edit-links">
-                {user.username === username && (
+                {user?.username === username && (
                   <Link to="/edit_profile">
                     <button className="edit-button">Edit Profile ✎</button>
                   </Link>
@@ -182,7 +186,7 @@ const Profile = () => {
               <h2>Skills Proficient At</h2>
               {/* Render skill boxes here */}
               <div className="skill-boxes">
-                {profileUser?.skillsProficientAt.map((skill, index) => (
+                {profileUser?.skillsProficientAt?.map((skill, index) => (
                   <div className="skill-box" style={{ fontSize: "16px" }} key={index}>
                     {skill}
                   </div>
@@ -197,8 +201,7 @@ const Profile = () => {
               <div className="education-boxes">
                 {/* Render education boxes here */}
                 {profileUser &&
-                  profileUser?.education &&
-                  profileUser?.education.map((edu, index) => (
+                  profileUser?.education?.map((edu, index) => (
                     <Box
                       key={index}
                       head={edu?.institution}
@@ -212,7 +215,7 @@ const Profile = () => {
             </div>
 
             {/* Projects */}
-            {profileUser?.projects && profileUser?.projects.length > 0 && (
+            {profileUser?.projects?.length > 0 && (
               <div className="projects">
                 <h2>Projects</h2>
 
@@ -220,8 +223,7 @@ const Profile = () => {
                   {
                     // Render project boxes here
                     profileUser &&
-                      profileUser?.projects &&
-                      profileUser?.projects.map((project, index) => (
+                      profileUser?.projects?.map((project, index) => (
                         <Box
                           key={index}
                           head={project?.title}
